@@ -22,3 +22,5 @@ jobs:
       run: docker login -u ${{secrets.REGISTERY_USERNAME}} -p ${{secrets.REGISTERY_PASS}}
     - name: Tag image 
       run: docker tag my-image-name:${{github.run_number}} ${{secrets.REGISTERY_USERNAME}}/my-image-name:${{github.run_number}}
+    - name: push image
+      run: docker push  
